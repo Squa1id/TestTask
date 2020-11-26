@@ -1,0 +1,74 @@
+﻿
+@{
+	ViewData["Title"] = "Реестр плановых проверок";
+}
+<div class="rounded border border-dark p-2 search-panel">
+	<h4>Поиск</h4>
+	<div class="row">
+		<div class="col-12 col-xl-5 mb-2">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="search-name-label">Наименование СМП</span>
+				</div>
+				<input id="nameInput" type="text" class="form-control" placeholder="" aria-describedby="search-name-label">
+				<div class="input-group-append">
+					<button type="button" for="nameInput" class="btn btn-secondary clear-button"><i class="mdi mdi-broom"></i></button>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-xl-5 mb-2">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Период проверки c</span>
+				</div>
+				<input id="auditPeriodFromInput" type="text" class="form-control bg-white" readonly="readonly">
+				<div class="input-group-append">
+					<button type="button" for="auditPeriodFromInput" class="btn btn-secondary clear-button"><i class="mdi mdi-broom"></i></button>
+				</div>
+				<div class="input-group-prepend">
+					<span class="input-group-text">по</span>
+				</div>
+				<input id="auditPeriodToInput" type="text" class="form-control bg-white" readonly="readonly">
+				<div class="input-group-append">
+					<button type="button" for="auditPeriodToInput" class="btn btn-secondary clear-button"><i class="mdi mdi-broom"></i></button>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-xl-2 mb-2">
+			<button id="findButton" type="button" class="btn btn-success w-100"><i class="mdi mdi-magnify"></i> Поиск</button>
+		</div>
+	</div>
+
+</div>
+
+<div class="mt-1 border border-dark rounded">
+	<div class="border-bottom border-dark rounded p-2 d-flex flex-row flex-wrap">
+		<button id="addButton" type="button" class="btn btn-success mr-2 mt-2"><i class="mdi mdi-plus-box"></i> Добавить</button>
+		<button id="editButton" type="button" class="btn btn-primary mr-2 mt-2 d-none"><i class="mdi mdi-pencil-outline"></i> Редактировать</button>
+		<button id="deleteButton" type="button" class="btn btn-danger mr-2 mt-2 d-none"><i class="mdi mdi-delete"></i> Удалить</button>
+		<button id="importButton" type="button" class="btn btn-info mr-2 mt-2"><i class="mdi mdi-file-export"></i> Импорт из Excel</button>
+		<button id="exportButton" type="button" class="btn btn-info mr-2 mt-2"><i class="mdi mdi-file-import"></i> Экспорт в Excel</button>
+	</div>
+	<div id="uploader" class="d-none"></div>
+	<div class="m-2">
+		<table id="registerTable" class="table table-hover table-bordered"></table>
+	</div>
+</div>
+
+@{
+	await Html.RenderPartialAsync("Modals/EditAuditModal");
+}
+
+@section Links
+{
+	<link href="https://unpkg.com/filepond/dist/filepond.min.css" rel="stylesheet">
+}
+@section Scripts
+{
+	<script src="https://unpkg.com/filepond/dist/filepond.min.js"></script>
+	<script src="https://unpkg.com/jquery-filepond/filepond.jquery.js"></script>
+	<script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+	<script src="js/utilities/dataTable.js"></script>
+	<script src="js/pages/modals/edit.audit.modal.js"></script>
+	<script src="js/pages/page.register.js"></script>
+}

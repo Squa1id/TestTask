@@ -1,0 +1,50 @@
+﻿<div id="editModal" class="modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 id="modalTitle" class="modal-title">Modal title</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<label class="input-group-text" for="smallBusinessSubjectSelect">Проверяемый СМП</label>
+					</div>
+					<select class="custom-select" id="smallBusinessSubjectSelect"></select>
+				</div>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<label class="input-group-text" for="supervisoryAuthoritySelect">Контролирующий орган</label>
+					</div>
+					<select class="custom-select" id="supervisoryAuthoritySelect"></select>
+				</div>
+				<label>Период проверки</label>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text">С</span>
+					</div>
+					<input id="auditPeriodFromModalInput" type="text" class="form-control bg-white" readonly="readonly">
+				</div>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text">По</span>
+					</div>
+					<input id="auditPeriodToModalInput" type="text" class="form-control bg-white" readonly="readonly">
+				</div>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text">Плановая длительность</span>
+					</div>
+					<input id="auditDurationModalInput" type="number" min="1" class="form-control" value="1">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button id="confirmAuditButton" type="button" class="btn btn-primary">Сохранить</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+			</div>
+		</div>
+	</div>
+</div>
+
